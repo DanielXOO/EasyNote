@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:EasyNote"
         mc:Ignorable="d"
         Title="EasyNote" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <DataGrid x:Name="Note" FontSize="17" FontWeight="Bold" Margin="15" AutoGenerateColumns="False" CanUserAddRows="False">
+    <Grid Grid.Row="2">
+        <DataGrid x:Name="Note" FontSize="17" FontWeight="Bold" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path = Text}" Header="TODO" IsReadOnly="True" Width="5*"/>
                     <DataGridCheckBoxColumn Binding="{Binding Path = IsDone, UpdateSourceTrigger=PropertyChanged}" Header="Done" IsReadOnly="false" Width="2*"/>
                     <DataGridTextColumn Binding="{Binding Path = CreationTime, StringFormat=dd-MM-yyyy}" Header="Time" IsReadOnly="true" Width="3*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button VerticalAlignment="Bottom" Height="25" Width="150" Content="Add TODO"></Button>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="10">    
+            <Button VerticalAlignment="Bottom" Height="25" Width="auto" Content="Add TODO"></Button>
         </StackPanel>
     </Grid>
 </Window>
