@@ -1,41 +1,17 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Text.Json;
 
 namespace EasyNote.Model
 {
-    class NoteModel : INotifyPropertyChanged
+    class NoteModel
     {
-        private bool _isDone;
-        private string _text;
-
+  
         public DateTime CreationTime { get; set; } = DateTime.Now;
+        public string Text { get; set; }
 
-        public string Text
+        public override string ToString()
         {
-            get { return _text; }
-            set 
-            {
-                if (_text == value)
-                    return;
-                _text = value;
-                OnPropertyChanged("Text");
-            }
+            return JsonSerializer.Serialize(this);
         }
-        public bool IsDone
-        {
-            get { return _isDone; }
-            set 
-            {
-                if (_isDone == value)
-                    return;
-                _isDone = value;
-                OnPropertyChanged("IsDone");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
     }
 }

@@ -9,13 +9,12 @@
     <Grid Grid.Row="2">
         <DataGrid x:Name="Note" FontSize="17" FontWeight="Bold" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path = Text}" Header="TODO" IsReadOnly="True" Width="5*"/>
-                    <DataGridCheckBoxColumn Binding="{Binding Path = IsDone, UpdateSourceTrigger=PropertyChanged}" Header="Done" IsReadOnly="false" Width="2*"/>
-                    <DataGridTextColumn Binding="{Binding Path = CreationTime, StringFormat=dd-MM-yyyy}" Header="Time" IsReadOnly="true" Width="3*"/>
+                <DataGridTextColumn Binding="{Binding Path = Text}" Header="TODO" IsReadOnly="True" Width="5*"/>
+                <DataGridTextColumn Binding="{Binding Path = CreationTime, StringFormat=dd-MM-yyyy}" Header="Time" IsReadOnly="true" Width="3*"/>
                 </DataGrid.Columns>
             </DataGrid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="10">    
-            <Button VerticalAlignment="Bottom" Height="25" Width="auto" Content="Add TODO"></Button>
+            <Button VerticalAlignment="Bottom" Height="25" Width="auto" Content="Add TODO" Click="Button_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>
